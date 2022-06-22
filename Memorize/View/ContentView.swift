@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    var collections = [Collection( name: "Japonais", cards: [Card( question: "question", reponse: "Réponse")])]
+    @State var collections = [Collection( name: "Japonais", cards: [Card( question: "question", reponse: "Réponse")])]
     
     @State private var isEditing:Bool = false
     
@@ -60,8 +60,9 @@ struct ContentView: View {
         }
     }
     
-    private func onEdit()->Void{
-        isEditing.toggle()
+    
+    private func testCollection()->Void{
+        collections.append(Collection(name: "test", cards: [Card(question: "e", reponse: "e")]))
     }
     
     
@@ -74,7 +75,7 @@ struct ContentView: View {
                 .font(.system(.largeTitle))
                 .padding()
                 .foregroundColor(Color("TitleColor"))
-                Spacer()
+                
             
             ScrollView(.vertical){
                 LazyVGrid(columns: [GridItem(.flexible(maximum:110)),GridItem(.flexible(maximum:110)),GridItem(.flexible(maximum:110))],spacing: 10){
@@ -104,7 +105,7 @@ struct ContentView: View {
                     }.padding(.horizontal,8)
                 }
                 Spacer()
-                Button(action:{}){
+                Button(action:testCollection){
                     
                     Image(systemName: "plus.circle.fill")
                         .resizable()
@@ -126,7 +127,7 @@ struct ContentView: View {
                     }.padding(.horizontal,8)
                 }
                 
-            }
+            }.padding(.bottom)
         
         }
         
