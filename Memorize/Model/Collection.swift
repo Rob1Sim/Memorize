@@ -8,18 +8,17 @@
 import Foundation
 
 
-struct Collection{
-    private let id:Int
+struct Collection: Identifiable{
+    internal let id = UUID()
     private var name:String
     private var cards:Array<Card>
-    private var nbCard:Int{
+    public var nbCard:Int{
         get{
             return cards.count
         }
     }
     
-    init(id:Int, name:String, cards:Array<Card>){
-        self.id = id
+    init(name:String, cards:Array<Card>){
         self.name = name
         self.cards = cards
     }
@@ -28,7 +27,7 @@ struct Collection{
                 Recupère l'id de la carte
                 return Int id
      **/
-    private func getId()->Int{
+    public func getId()->UUID{
         return self.id
         
     }
@@ -37,7 +36,7 @@ struct Collection{
                 Recupère le nom de la carte
                 return String name
      **/
-    private func getName()->String{
+    public func getName()->String{
         return self.name
     }
     
@@ -45,7 +44,7 @@ struct Collection{
                 Recupère les cartes présente dans la collection
                 return Array<card> cards
      **/
-    private func getCards()->Array<Card>{
+    public func getCards()->Array<Card>{
         return self.cards
     }
     
@@ -53,7 +52,7 @@ struct Collection{
                 Modifie le nom avec le nom passé en paramètre
                 String n Nom
      **/
-    private mutating func setName(value n:String)->Void{
+    public mutating func setName(value n:String)->Void{
         self.name = n
     }
 }

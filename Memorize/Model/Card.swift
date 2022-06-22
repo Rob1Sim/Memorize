@@ -8,8 +8,8 @@
 import Foundation
 
 
-class Card{
-    private let id:Int
+class Card: Identifiable{
+    internal let id:UUID = UUID()
     private var question:String
     private var supQuestion:String?
     private var reponse:String
@@ -19,8 +19,7 @@ class Card{
     /*
      Constructeur
      */
-    init(id:Int, question:String, reponse:String,supQuestion:String? = nil, supResponse:String? = nil){
-        self.id = id
+    init(question:String, reponse:String,supQuestion:String? = nil, supResponse:String? = nil){
         self.question = question
         self.supQuestion = supQuestion
         self.reponse = reponse
@@ -32,7 +31,7 @@ class Card{
                 Recupère l'id de la carte
                 return Int id
      **/
-    public func getId()->Int{
+    public func getId()->UUID{
         return id
     }
     
