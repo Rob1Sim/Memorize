@@ -16,6 +16,18 @@ struct Card{
     private var supResponse:String?
     private var score:Int = 0;
     
+    /*
+     Constructeur
+     */
+    init(id:Int, question:String, reponse:String,supQuestion:String? = nil, supResponse:String? = nil){
+        self.id = id
+        self.question = question
+        self.supQuestion = supQuestion
+        self.reponse = reponse
+        self.supResponse = supResponse
+        
+    }
+    
     /**
                 Recupère l'id de la carte
                 return Int id
