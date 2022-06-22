@@ -8,7 +8,7 @@
 import Foundation
 
 
-struct Card{
+class Card{
     private let id:Int
     private var question:String
     private var supQuestion:String?
@@ -82,7 +82,7 @@ struct Card{
                 Modifie la question de la carte
                 String value : La nouvelle question
      **/
-    public mutating func setQuestion(value q:String)->Void{
+    public func setQuestion(value q:String)->Void{
         question = q
     }
     
@@ -90,7 +90,7 @@ struct Card{
                 Modifie la question de la carte
                 String value : Le nouveaux supplément de question
      **/
-    public mutating func setSupQuestion(value q:String)->Void{
+    public func setSupQuestion(value q:String)->Void{
         supQuestion = q
     }
     
@@ -98,7 +98,7 @@ struct Card{
                 Modifie la question de la carte
                 String value : La nouvelle réponse
      **/
-    public mutating func setReponse(value r:String)->Void{
+    public func setReponse(value r:String)->Void{
         reponse = r
     }
     
@@ -106,21 +106,33 @@ struct Card{
                 Modifie la question de la carte
                 String value : Le nouveau suplément de réponse
      **/
-    public mutating func setSupResponse(value r:String)->Void{
+    public func setSupResponse(value r:String)->Void{
         supResponse = r
     }
     
+    /*
+     Modifie la valeur de score, est privé car elle est utlisé seulement dans la méthode statique
+     Int newScore : Score a actualisé
+     */
+    
+    private func setScore(newScore:Int)->Void{
+        self.score = newScore
+    }
     
     /*
     Si l'utilisateur répond bien alors son score augmente sinon il repars a 0
      Bool isGood : Booléan qui si est vrai signifie que l'utilisateur a bien répondue
+     Card card : Instance de la carte a modifié
      */
-    public mutating func calculScore(isGood:Bool)->Void{
+    public static func calculScore(card:Card ,isGood:Bool)->Void{
+        var n = 0
         if (isGood){
-            score = score + 1
+            n =  card.getScore() + 1
+            card.setScore(newScore:n)
             
         }else{
-            score = 0
+            
+            card.setScore(newScore:n)
         }
         
     }
