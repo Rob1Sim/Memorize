@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     var collections = [Collection( name: "Japonais", cards: [Card( question: "question", reponse: "Réponse")])]
+    
     @State private var isEditing:Bool = false
     
     /**
@@ -78,9 +79,9 @@ struct ContentView: View {
             ScrollView(.vertical){
                 LazyVGrid(columns: [GridItem(.flexible(maximum:110)),GridItem(.flexible(maximum:110)),GridItem(.flexible(maximum:110))],spacing: 10){
                     ForEach(collections){
-                        collection in Text(collection.getName())
+                        collection in categoryComp(collection.getName(), collection.nbCard)
                     }
-                   
+                    
 
 
                     

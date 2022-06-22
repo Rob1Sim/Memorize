@@ -12,7 +12,7 @@ struct Collection: Identifiable{
     internal let id = UUID()
     private var name:String
     private var cards:Array<Card>
-    private var nbCard:Int{
+    public var nbCard:Int{
         get{
             return cards.count
         }
