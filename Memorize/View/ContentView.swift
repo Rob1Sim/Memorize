@@ -7,6 +7,9 @@
 
 import SwiftUI
 
+/*
+    Page d'accueil
+ */
 struct ContentView: View {
     var body: some View {
         Text("Hello, world!")

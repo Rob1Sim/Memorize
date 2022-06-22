@@ -51,8 +51,10 @@
 		F15BE60E2863183800B1C8DF /* Memorize */ = {
 			isa = PBXGroup;
 			children = (
+				F15BE61F2863189000B1C8DF /* Controller */,
+				F15BE61E2863188900B1C8DF /* View */,
+				F15BE61D2863188000B1C8DF /* Model */,
 				F15BE60F2863183800B1C8DF /* MemorizeApp.swift */,
-				F15BE6112863183800B1C8DF /* ContentView.swift */,
 				F15BE6132863183A00B1C8DF /* Assets.xcassets */,
 				F15BE6152863183A00B1C8DF /* Preview Content */,
 			);
@@ -65,6 +67,28 @@
 				F15BE6162863183A00B1C8DF /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F15BE61D2863188000B1C8DF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F15BE61E2863188900B1C8DF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F15BE6112863183800B1C8DF /* ContentView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F15BE61F2863189000B1C8DF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
