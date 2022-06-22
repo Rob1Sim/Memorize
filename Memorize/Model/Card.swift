@@ -99,7 +99,19 @@ struct Card{
     }
     
     
-    
+    /*
+    Si l'utilisateur répond bien alors son score augmente sinon il repars a 0
+     Bool isGood : Booléan qui si est vrai signifie que l'utilisateur a bien répondue
+     */
+    public mutating func calculScore(isGood:Bool)->Void{
+        if (isGood){
+            score = score + 1
+            
+        }else{
+            score = 0
+        }
+        
+    }
     
     
 }
