@@ -94,13 +94,20 @@ struct ContentView: View {
             }
             .padding(.top,100)
             
-            
+            Spacer()
             HStack{
-                Image(systemName: "cart.fill")
-                    .resizable()
-                    .foregroundColor(Color("SecondaryColor"))
-                    .frame(width:30,height: 30)
-                    .padding(.horizontal,8)
+                Button(action: {}){
+                    ZStack{
+                        RoundedRectangle(cornerRadius: 8)
+                            .frame(width:40,height: 40)
+                            .foregroundColor(Color("SecondaryColor"))
+                        Image(systemName: "cart")
+                            .resizable()
+                            .foregroundColor(.white)
+                            .frame(width:28,height: 28)
+                            
+                    }.padding(.horizontal,8)
+                }
                 Spacer()
                 Button(action:{}){
                     
@@ -111,11 +118,19 @@ struct ContentView: View {
                         
                 }
                 Spacer()
-                Image(systemName: "gearshape")
-                    .resizable()
-                    .foregroundColor(Color("SecondaryColor"))
-                    .frame(width:30,height: 30)
-                    .padding(.horizontal,8)
+                Button(action:{}){
+                    ZStack{
+                        RoundedRectangle(cornerRadius: 8)
+                            .frame(width:40,height: 40)
+                            .foregroundColor(Color("SecondaryColor"))
+                        Image(systemName: "gearshape")
+                            .resizable()
+                            .foregroundColor(.white)
+                            .frame(width:30,height: 30)
+                            
+                    }.padding(.horizontal,8)
+                }
+                
             }
         
         }
