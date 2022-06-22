@@ -60,7 +60,9 @@ struct ContentView: View {
         }
     }
     
-    
+    /*
+        Fonction qui test l'ajout de collections en cliquant sur le bouton blanc
+     */
     private func testCollection()->Void{
         collections.append(Collection(name: "test", cards: [Card(question: "e", reponse: "e")]))
     }
