@@ -64,4 +64,42 @@ struct Card{
         return score
     }
     
+    
+    
+    /**
+                Modifie la question de la carte
+                String value : La nouvelle question
+     **/
+    public mutating func setQuestion(value q:String)->Void{
+        question = q
+    }
+    
+    /**
+                Modifie la question de la carte
+                String value : Le nouveaux supplément de question
+     **/
+    public mutating func setSupQuestion(value q:String)->Void{
+        supQuestion = q
+    }
+    
+    /**
+                Modifie la question de la carte
+                String value : La nouvelle réponse
+     **/
+    public mutating func setReponse(value r:String)->Void{
+        reponse = r
+    }
+    
+    /**
+                Modifie la question de la carte
+                String value : Le nouveau suplément de réponse
+     **/
+    public mutating func setSupResponse(value r:String)->Void{
+        supResponse = r
+    }
+    
+    
+    
+    
+    
 }
