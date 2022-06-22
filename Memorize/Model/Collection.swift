@@ -18,6 +18,12 @@ struct Collection{
         }
     }
     
+    init(id:Int, name:String, cards:Array<Card>){
+        self.id = id
+        self.name = name
+        self.cards = cards
+    }
+    
     /**
                 Recupère l'id de la carte
                 return Int id
