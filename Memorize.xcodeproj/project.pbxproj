@@ -8,23 +8,27 @@
 
 /* Begin PBXBuildFile section */
 		F15BE6102863183800B1C8DF /* MemorizeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15BE60F2863183800B1C8DF /* MemorizeApp.swift */; };
-		F15BE6122863183800B1C8DF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15BE6112863183800B1C8DF /* ContentView.swift */; };
+		F15BE6122863183800B1C8DF /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15BE6112863183800B1C8DF /* CollectionView.swift */; };
 		F15BE6142863183A00B1C8DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F15BE6132863183A00B1C8DF /* Assets.xcassets */; };
 		F15BE6172863183A00B1C8DF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F15BE6162863183A00B1C8DF /* Preview Assets.xcassets */; };
 		F15BE6212863248C00B1C8DF /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15BE6202863248C00B1C8DF /* Card.swift */; };
 		F15BE62328634B2D00B1C8DF /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15BE62228634B2D00B1C8DF /* Collection.swift */; };
 		F15BE62628635C0700B1C8DF /* TestContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15BE62528635C0700B1C8DF /* TestContentView.swift */; };
+		F15BE6282863603E00B1C8DF /* collectionControler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15BE6272863603E00B1C8DF /* collectionControler.swift */; };
+		F15BE62C2863674D00B1C8DF /* OutOfIndexExeption.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15BE62B2863674D00B1C8DF /* OutOfIndexExeption.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		F15BE60C2863183800B1C8DF /* Memorize.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Memorize.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F15BE60F2863183800B1C8DF /* MemorizeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemorizeApp.swift; sourceTree = "<group>"; };
-		F15BE6112863183800B1C8DF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F15BE6112863183800B1C8DF /* CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionView.swift; sourceTree = "<group>"; };
 		F15BE6132863183A00B1C8DF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F15BE6162863183A00B1C8DF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F15BE6202863248C00B1C8DF /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		F15BE62228634B2D00B1C8DF /* Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
 		F15BE62528635C0700B1C8DF /* TestContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestContentView.swift; sourceTree = "<group>"; };
+		F15BE6272863603E00B1C8DF /* collectionControler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = collectionControler.swift; sourceTree = "<group>"; };
+		F15BE62B2863674D00B1C8DF /* OutOfIndexExeption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutOfIndexExeption.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,7 @@
 		F15BE60E2863183800B1C8DF /* Memorize */ = {
 			isa = PBXGroup;
 			children = (
+				F15BE6292863672000B1C8DF /* Error */,
 				F15BE61F2863189000B1C8DF /* Controller */,
 				F15BE61E2863188900B1C8DF /* View */,
 				F15BE61D2863188000B1C8DF /* Model */,
@@ -88,7 +93,7 @@
 		F15BE61E2863188900B1C8DF /* View */ = {
 			isa = PBXGroup;
 			children = (
-				F15BE6112863183800B1C8DF /* ContentView.swift */,
+				F15BE6112863183800B1C8DF /* CollectionView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -96,6 +101,7 @@
 		F15BE61F2863189000B1C8DF /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				F15BE6272863603E00B1C8DF /* collectionControler.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -106,6 +112,14 @@
 				F15BE62528635C0700B1C8DF /* TestContentView.swift */,
 			);
 			path = Tests;
+			sourceTree = "<group>";
+		};
+		F15BE6292863672000B1C8DF /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				F15BE62B2863674D00B1C8DF /* OutOfIndexExeption.swift */,
+			);
+			path = Error;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -178,10 +192,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F15BE6122863183800B1C8DF /* ContentView.swift in Sources */,
+				F15BE6122863183800B1C8DF /* CollectionView.swift in Sources */,
 				F15BE6212863248C00B1C8DF /* Card.swift in Sources */,
 				F15BE6102863183800B1C8DF /* MemorizeApp.swift in Sources */,
 				F15BE62628635C0700B1C8DF /* TestContentView.swift in Sources */,
+				F15BE62C2863674D00B1C8DF /* OutOfIndexExeption.swift in Sources */,
+				F15BE6282863603E00B1C8DF /* collectionControler.swift in Sources */,
 				F15BE62328634B2D00B1C8DF /* Collection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

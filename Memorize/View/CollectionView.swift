@@ -7,11 +7,10 @@
 
 import SwiftUI
 
-struct ContentView: View {
-    @State var collections = [Collection( name: "Japonais", cards: [Card( question: "question", reponse: "Réponse")])]
-    
-    @State private var isEditing:Bool = false
-    
+struct CollectionView: View {
+    var collectionController = CollectionControler()
+    @State var collections = CollectionControler().collections
+        
     /**
                 Créer un petit carrée rose qui représente une liste
                 String titre : Le nom de la liste
@@ -140,7 +139,7 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        CollectionView()
             .preferredColorScheme(.dark)
     }
 }
