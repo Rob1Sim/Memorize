@@ -8,16 +8,16 @@
 import SwiftUI
 
 struct CollectionView: View {
-    var collectionController = CollectionControler()
-    @State var collections = CollectionControler().collections
-        
+    
+       
+    @State var collectionController = CollectionController()
     /**
                 Créer un petit carrée rose qui représente une liste
                 String titre : Le nom de la liste
                 int nbElment : le nombre d'élément que contient cette liste
                 return some View : Un carré rose qui représente une liste
      */
-    fileprivate func categoryComp(_ title: String, _ nbElement:Int) -> some View {
+    fileprivate func categoryComp(_ title: String, _ nbElement:Int, _ id:UUID) ->some View {
         return VStack{
     
             Text(title)
@@ -63,7 +63,7 @@ struct CollectionView: View {
         Fonction qui test l'ajout de collections en cliquant sur le bouton blanc
      */
     private func testCollection()->Void{
-        collections.append(Collection(name: "test", cards: [Card(question: "e", reponse: "e")]))
+        collectionController.collections.append(Collection(name: "test", cards: [Card(question: "e", reponse: "e")]))
     }
     
     
@@ -80,8 +80,8 @@ struct CollectionView: View {
             
             ScrollView(.vertical){
                 LazyVGrid(columns: [GridItem(.flexible(maximum:110)),GridItem(.flexible(maximum:110)),GridItem(.flexible(maximum:110))],spacing: 10){
-                    ForEach(collections){
-                        collection in categoryComp(collection.getName(), collection.nbCard)
+                    ForEach(collectionController.collections){
+                        collection in categoryComp(collection.getName(), collection.nbCard,collection.getId())
                     }
                     
 
