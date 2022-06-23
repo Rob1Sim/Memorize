@@ -27,7 +27,7 @@ struct CollectionView: View {
                 int nbElment : le nombre d'élément que contient cette liste
                 return some View : Un carré rose qui représente une liste
      */
-    fileprivate func categoryComp(_ title: String, _ nbElement:Int64) ->some View {
+    fileprivate func categoryComp(_ title: String, _ nbElement:Int64,_ actualColleciton:CollectionEntity) ->some View {
         return VStack{
     
             Text(title)
@@ -57,7 +57,14 @@ struct CollectionView: View {
                             
                     }
                 }
-                Button(action: {}) {
+                Button(action: {
+                    /*
+                     Supprime de la mémoire la collection
+                     */
+                    managedObjectContext.delete(actualColleciton)
+                    PersistenceController.shared.save()
+
+                }) {
                     HStack{
                         Text("Supprimer")
                             .foregroundColor(Color.red)
@@ -104,7 +111,7 @@ struct CollectionView: View {
                 LazyVGrid(columns: [GridItem(.flexible(maximum:110)),GridItem(.flexible(maximum:110)),GridItem(.flexible(maximum:110))],spacing: 10){
                     
                      ForEach(collectionsE){
-                         collection in categoryComp(collection.name ?? "Aucun nom", collection.nbCards)
+                         collection in categoryComp(collection.name ?? "Aucun nom", collection.nbCards,collection)
                      }
                      
 

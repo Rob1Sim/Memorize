@@ -23,7 +23,7 @@ class MemorizeTestsCollectionController: XCTestCase {
     /*
      Test la suppréssion d'une collection dans une liste de collection par son id
      */
-    func testDeleteCollection() throws{
+    /*func testDeleteCollection() throws{
         var collectionList:Array<Collection> = []
         for i in 0...10{
             collectionList.append(Collection(name: "Test\(i)", cards: [testCard]))
@@ -34,7 +34,7 @@ class MemorizeTestsCollectionController: XCTestCase {
         id = UUID()
         try XCTAssertThrowsError(CollectionController.deleteCollection(id: id, collections: &collectionList), "\(id) ne fait pas partie des collections de la list il doit renvoyer une erreur")
 
-    }
+    }*/
 
     func testPerformanceExample() throws {
         // This is an example of a performance test case.
