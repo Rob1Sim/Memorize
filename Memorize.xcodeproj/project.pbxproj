@@ -13,11 +13,9 @@
 		F15BE6172863183A00B1C8DF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F15BE6162863183A00B1C8DF /* Preview Assets.xcassets */; };
 		F15BE6212863248C00B1C8DF /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15BE6202863248C00B1C8DF /* Card.swift */; };
 		F15BE62328634B2D00B1C8DF /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15BE62228634B2D00B1C8DF /* Collection.swift */; };
-		F15BE62628635C0700B1C8DF /* TestContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15BE62528635C0700B1C8DF /* TestContentView.swift */; };
 		F15BE6282863603E00B1C8DF /* CollectionControler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15BE6272863603E00B1C8DF /* CollectionControler.swift */; };
 		F15BE62C2863674D00B1C8DF /* OutOfIndexExeption.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15BE62B2863674D00B1C8DF /* OutOfIndexExeption.swift */; };
 		F15BE6382864669F00B1C8DF /* MemorizeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15BE6372864669F00B1C8DF /* MemorizeTests.swift */; };
-		F15BE6402864700A00B1C8DF /* TestContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15BE63F2864700A00B1C8DF /* TestContentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,12 +36,10 @@
 		F15BE6162863183A00B1C8DF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F15BE6202863248C00B1C8DF /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		F15BE62228634B2D00B1C8DF /* Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
-		F15BE62528635C0700B1C8DF /* TestContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestContentView.swift; sourceTree = "<group>"; };
 		F15BE6272863603E00B1C8DF /* CollectionControler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionControler.swift; sourceTree = "<group>"; };
 		F15BE62B2863674D00B1C8DF /* OutOfIndexExeption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutOfIndexExeption.swift; sourceTree = "<group>"; };
 		F15BE6352864669F00B1C8DF /* MemorizeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MemorizeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F15BE6372864669F00B1C8DF /* MemorizeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemorizeTests.swift; sourceTree = "<group>"; };
-		F15BE63F2864700A00B1C8DF /* TestContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,7 +63,6 @@
 		F15BE6032863183800B1C8DF = {
 			isa = PBXGroup;
 			children = (
-				F15BE63E28646FE800B1C8DF /* Tests */,
 				F15BE60E2863183800B1C8DF /* Memorize */,
 				F15BE6362864669F00B1C8DF /* MemorizeTests */,
 				F15BE60D2863183800B1C8DF /* Products */,
@@ -144,14 +139,6 @@
 				F15BE6372864669F00B1C8DF /* MemorizeTests.swift */,
 			);
 			path = MemorizeTests;
-			sourceTree = "<group>";
-		};
-		F15BE63E28646FE800B1C8DF /* Tests */ = {
-			isa = PBXGroup;
-			children = (
-				F15BE63F2864700A00B1C8DF /* TestContentView.swift */,
-			);
-			path = Tests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,7 +247,6 @@
 				F15BE62C2863674D00B1C8DF /* OutOfIndexExeption.swift in Sources */,
 				F15BE6282863603E00B1C8DF /* CollectionControler.swift in Sources */,
 				F15BE62328634B2D00B1C8DF /* Collection.swift in Sources */,
-				F15BE6402864700A00B1C8DF /* TestContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
