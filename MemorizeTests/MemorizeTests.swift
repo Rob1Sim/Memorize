@@ -58,9 +58,9 @@ class MemorizeTests: XCTestCase {
         }
         var id = collectionList[Int.random(in: 0...10)].getId()
         
-        try XCTAssertNoThrow(CollectionControler.deleteCollection(id: id, collections: &collectionList))
+        try XCTAssertNoThrow(CollectionController.deleteCollection(id: id, collections: &collectionList))
         id = UUID()
-        try XCTAssertThrowsError(CollectionControler.deleteCollection(id: id, collections: &collectionList), "\(id) ne fait pas partie des collections de la list il doit renvoyer une erreur")
+        try XCTAssertThrowsError(CollectionController.deleteCollection(id: id, collections: &collectionList), "\(id) ne fait pas partie des collections de la list il doit renvoyer une erreur")
 
     }
     
