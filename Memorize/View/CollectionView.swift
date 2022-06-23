@@ -9,7 +9,17 @@ import SwiftUI
 
 struct CollectionView: View {
     
-       
+    @Environment(\.managedObjectContext) var managedObjectContext
+
+    
+    //permet de récuperer dnas la mémoire par ordre alphabétique toute les collectionEntity
+    @FetchRequest(sortDescriptors: [SortDescriptor(\.nbCards)]) var collectionsE: FetchedResults<CollectionEntity>
+
+    /*
+     @State var collections = [Collection( name: "Japonais", cards: [Card( question: "question", reponse: "Réponse")])]
+     */
+    
+    
     @State var collectionController = CollectionController()
     /**
                 Créer un petit carrée rose qui représente une liste
@@ -17,7 +27,7 @@ struct CollectionView: View {
                 int nbElment : le nombre d'élément que contient cette liste
                 return some View : Un carré rose qui représente une liste
      */
-    fileprivate func categoryComp(_ title: String, _ nbElement:Int, _ id:UUID) ->some View {
+    fileprivate func categoryComp(_ title: String, _ nbElement:Int64,_ actualColleciton:CollectionEntity) ->some View {
         return VStack{
     
             Text(title)
@@ -47,7 +57,14 @@ struct CollectionView: View {
                             
                     }
                 }
-                Button(action: {}) {
+                Button(action: {
+                    /*
+                     Supprime de la mémoire la collection
+                     */
+                    managedObjectContext.delete(actualColleciton)
+                    PersistenceController.shared.save()
+
+                }) {
                     HStack{
                         Text("Supprimer")
                             .foregroundColor(Color.red)
@@ -59,11 +76,23 @@ struct CollectionView: View {
         }
     }
     
+    
+    
     /*
         Fonction qui test l'ajout de collections en cliquant sur le bouton blanc
      */
     private func testCollection()->Void{
-        collectionController.collections.append(Collection(name: "test", cards: [Card(question: "e", reponse: "e")]))
+    
+        //Permet d'ajouter des collection en mémoire
+        let col = CollectionEntity(context: managedObjectContext)
+        col.name = "connard"
+        col.id = UUID()
+        col.nbCards = 32
+        //Permet de sauvegarder juste après un ajout
+        if managedObjectContext.hasChanges {
+            PersistenceController.shared.save()
+        }
+
     }
     
     
@@ -80,11 +109,11 @@ struct CollectionView: View {
             
             ScrollView(.vertical){
                 LazyVGrid(columns: [GridItem(.flexible(maximum:110)),GridItem(.flexible(maximum:110)),GridItem(.flexible(maximum:110))],spacing: 10){
-                    ForEach(collectionController.collections){
-                        collection in categoryComp(collection.getName(), collection.nbCard,collection.getId())
-                    }
                     
-
+                     ForEach(collectionsE){
+                         collection in categoryComp(collection.name ?? "Aucun nom", collection.nbCards,collection)
+                     }
+                     
 
                     
                 }

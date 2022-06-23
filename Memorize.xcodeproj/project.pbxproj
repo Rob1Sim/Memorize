@@ -17,6 +17,8 @@
 		F15BE62C2863674D00B1C8DF /* OutOfIndexExeption.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15BE62B2863674D00B1C8DF /* OutOfIndexExeption.swift */; };
 		F15BE6382864669F00B1C8DF /* MemorizeTestsCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15BE6372864669F00B1C8DF /* MemorizeTestsCards.swift */; };
 		F15BE642286471DC00B1C8DF /* MemorizeTestsCollectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15BE641286471DC00B1C8DF /* MemorizeTestsCollectionController.swift */; };
+		F15BE6472864970700B1C8DF /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15BE6462864970700B1C8DF /* PersistenceController.swift */; };
+		F15BE68528649F3500B1C8DF /* Memorize.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F15BE68328649F3500B1C8DF /* Memorize.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +44,8 @@
 		F15BE6352864669F00B1C8DF /* MemorizeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MemorizeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F15BE6372864669F00B1C8DF /* MemorizeTestsCards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemorizeTestsCards.swift; sourceTree = "<group>"; };
 		F15BE641286471DC00B1C8DF /* MemorizeTestsCollectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemorizeTestsCollectionController.swift; sourceTree = "<group>"; };
+		F15BE6462864970700B1C8DF /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
+		F15BE68428649F3500B1C8DF /* Memorize.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Memorize.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +111,7 @@
 			children = (
 				F15BE6202863248C00B1C8DF /* Card.swift */,
 				F15BE62228634B2D00B1C8DF /* Collection.swift */,
+				F15BE68328649F3500B1C8DF /* Memorize.xcdatamodeld */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -123,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				F15BE6272863603E00B1C8DF /* CollectionControler.swift */,
+				F15BE6462864970700B1C8DF /* PersistenceController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -249,7 +255,9 @@
 				F15BE6102863183800B1C8DF /* MemorizeApp.swift in Sources */,
 				F15BE62C2863674D00B1C8DF /* OutOfIndexExeption.swift in Sources */,
 				F15BE6282863603E00B1C8DF /* CollectionControler.swift in Sources */,
+				F15BE68528649F3500B1C8DF /* Memorize.xcdatamodeld in Sources */,
 				F15BE62328634B2D00B1C8DF /* Collection.swift in Sources */,
+				F15BE6472864970700B1C8DF /* PersistenceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -514,6 +522,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		F15BE68328649F3500B1C8DF /* Memorize.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F15BE68428649F3500B1C8DF /* Memorize.xcdatamodel */,
+			);
+			currentVersion = F15BE68428649F3500B1C8DF /* Memorize.xcdatamodel */;
+			path = Memorize.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = F15BE6042863183800B1C8DF /* Project object */;
 }

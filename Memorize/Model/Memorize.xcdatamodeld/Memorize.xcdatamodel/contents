@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21E258" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="CardsEntity" representedClassName="CardsEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="question" attributeType="String"/>
+        <attribute name="questionSup" optional="YES" attributeType="String"/>
+        <attribute name="response" attributeType="String"/>
+        <attribute name="responseSup" optional="YES" attributeType="String"/>
+        <attribute name="score" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="cardRelation" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CollectionEntity" inverseName="collectionRelation" inverseEntity="CollectionEntity"/>
+    </entity>
+    <entity name="CollectionEntity" representedClassName=".CollectionEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="name" attributeType="String"/>
+        <attribute name="nbCards" attributeType="Integer 64" usesScalarValueType="YES"/>
+        <relationship name="collectionRelation" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="CardsEntity" inverseName="cardRelation" inverseEntity="CardsEntity"/>
+    </entity>
+    <elements>
+        <element name="CardsEntity" positionX="18" positionY="90" width="128" height="134"/>
+        <element name="CollectionEntity" positionX="-293.8046875" positionY="122.0625" width="128" height="89"/>
+    </elements>
+</model>
