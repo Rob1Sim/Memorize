@@ -21,7 +21,7 @@ class CollectionControler{
      */
     public static func deleteCollection(id:UUID,collections c:inout Array<Collection>) throws ->Void{
         var index = -1
-        for i in 0...c.count{
+        for i in 0...c.count-1{
             if c[i].getId() == id{
                 index = i
             }
