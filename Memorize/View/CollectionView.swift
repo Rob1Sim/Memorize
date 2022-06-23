@@ -19,6 +19,8 @@ struct CollectionView: View {
      @State var collections = [Collection( name: "Japonais", cards: [Card( question: "question", reponse: "Réponse")])]
      */
     
+    @State var popup = false
+    @State var text = ""
     
     @State var collectionController = CollectionController()
     /**
@@ -135,7 +137,9 @@ struct CollectionView: View {
                     }.padding(.horizontal,8)
                 }
                 Spacer()
-                Button(action:testCollection){
+                Button(action:{
+                    popup = true
+                }){
                     
                     Image(systemName: "plus.circle.fill")
                         .resizable()
@@ -158,9 +162,9 @@ struct CollectionView: View {
                 }
                 
             }.padding(.bottom)
+                
         
         }
-        
         .background(Color("BackgroundColor"))
         
     }
