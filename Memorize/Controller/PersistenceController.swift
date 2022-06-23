@@ -6,6 +6,7 @@
 //
 
 import CoreData
+import SwiftUI
 
 struct PersistenceController {
     
@@ -44,6 +45,7 @@ struct PersistenceController {
 
     init(inMemory: Bool = false) {
         container = NSPersistentContainer(name: "Memorize")
+       
         if inMemory {
             container.persistentStoreDescriptions.first!.url = URL(fileURLWithPath: "/dev/null")
         }
@@ -68,7 +70,6 @@ struct PersistenceController {
     
     func save(){
         let context = container.viewContext
-        
         if context.hasChanges {
             do{
                 try context.save()

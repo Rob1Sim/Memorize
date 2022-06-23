@@ -111,7 +111,6 @@
 			children = (
 				F15BE6202863248C00B1C8DF /* Card.swift */,
 				F15BE62228634B2D00B1C8DF /* Collection.swift */,
-				F15BE6462864970700B1C8DF /* PersistenceController.swift */,
 				F15BE68328649F3500B1C8DF /* Memorize.xcdatamodeld */,
 			);
 			path = Model;
@@ -129,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				F15BE6272863603E00B1C8DF /* CollectionControler.swift */,
+				F15BE6462864970700B1C8DF /* PersistenceController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";

@@ -10,9 +10,9 @@ import Foundation
 
 class CollectionController{
     
-    public var collections = [Collection( name: "Japonais", cards: [Card( question: "question", reponse: "Réponse")])]
     
-    
+
+
     /*
      Supprime la collection d'id passé en paramètre de la list de collection passé en paramètre
      UUID id : L'id de la collection a supprimé
