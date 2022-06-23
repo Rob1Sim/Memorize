@@ -8,7 +8,7 @@
 import Foundation
 
 
-class CollectionControler{
+class CollectionController{
     
     public var collections = [Collection( name: "Japonais", cards: [Card( question: "question", reponse: "Réponse")])]
     
