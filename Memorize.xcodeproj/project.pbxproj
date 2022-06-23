@@ -8,27 +8,49 @@
 
 /* Begin PBXBuildFile section */
 		F15BE6102863183800B1C8DF /* MemorizeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15BE60F2863183800B1C8DF /* MemorizeApp.swift */; };
-		F15BE6122863183800B1C8DF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15BE6112863183800B1C8DF /* ContentView.swift */; };
+		F15BE6122863183800B1C8DF /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15BE6112863183800B1C8DF /* CollectionView.swift */; };
 		F15BE6142863183A00B1C8DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F15BE6132863183A00B1C8DF /* Assets.xcassets */; };
 		F15BE6172863183A00B1C8DF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F15BE6162863183A00B1C8DF /* Preview Assets.xcassets */; };
 		F15BE6212863248C00B1C8DF /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15BE6202863248C00B1C8DF /* Card.swift */; };
 		F15BE62328634B2D00B1C8DF /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15BE62228634B2D00B1C8DF /* Collection.swift */; };
-		F15BE62628635C0700B1C8DF /* TestContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15BE62528635C0700B1C8DF /* TestContentView.swift */; };
+		F15BE6282863603E00B1C8DF /* CollectionControler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15BE6272863603E00B1C8DF /* CollectionControler.swift */; };
+		F15BE62C2863674D00B1C8DF /* OutOfIndexExeption.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15BE62B2863674D00B1C8DF /* OutOfIndexExeption.swift */; };
+		F15BE6382864669F00B1C8DF /* MemorizeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15BE6372864669F00B1C8DF /* MemorizeTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F15BE6392864669F00B1C8DF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F15BE6042863183800B1C8DF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F15BE60B2863183800B1C8DF;
+			remoteInfo = Memorize;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		F15BE60C2863183800B1C8DF /* Memorize.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Memorize.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F15BE60F2863183800B1C8DF /* MemorizeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemorizeApp.swift; sourceTree = "<group>"; };
-		F15BE6112863183800B1C8DF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F15BE6112863183800B1C8DF /* CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionView.swift; sourceTree = "<group>"; };
 		F15BE6132863183A00B1C8DF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F15BE6162863183A00B1C8DF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F15BE6202863248C00B1C8DF /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		F15BE62228634B2D00B1C8DF /* Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
-		F15BE62528635C0700B1C8DF /* TestContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestContentView.swift; sourceTree = "<group>"; };
+		F15BE6272863603E00B1C8DF /* CollectionControler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionControler.swift; sourceTree = "<group>"; };
+		F15BE62B2863674D00B1C8DF /* OutOfIndexExeption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutOfIndexExeption.swift; sourceTree = "<group>"; };
+		F15BE6352864669F00B1C8DF /* MemorizeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MemorizeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F15BE6372864669F00B1C8DF /* MemorizeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemorizeTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		F15BE6092863183800B1C8DF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F15BE6322864669F00B1C8DF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -41,8 +63,8 @@
 		F15BE6032863183800B1C8DF = {
 			isa = PBXGroup;
 			children = (
-				F15BE62428635BF400B1C8DF /* Tests */,
 				F15BE60E2863183800B1C8DF /* Memorize */,
+				F15BE6362864669F00B1C8DF /* MemorizeTests */,
 				F15BE60D2863183800B1C8DF /* Products */,
 			);
 			sourceTree = "<group>";
@@ -51,6 +73,7 @@
 			isa = PBXGroup;
 			children = (
 				F15BE60C2863183800B1C8DF /* Memorize.app */,
+				F15BE6352864669F00B1C8DF /* MemorizeTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -58,6 +81,7 @@
 		F15BE60E2863183800B1C8DF /* Memorize */ = {
 			isa = PBXGroup;
 			children = (
+				F15BE6292863672000B1C8DF /* Error */,
 				F15BE61F2863189000B1C8DF /* Controller */,
 				F15BE61E2863188900B1C8DF /* View */,
 				F15BE61D2863188000B1C8DF /* Model */,
@@ -88,7 +112,7 @@
 		F15BE61E2863188900B1C8DF /* View */ = {
 			isa = PBXGroup;
 			children = (
-				F15BE6112863183800B1C8DF /* ContentView.swift */,
+				F15BE6112863183800B1C8DF /* CollectionView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -96,16 +120,25 @@
 		F15BE61F2863189000B1C8DF /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				F15BE6272863603E00B1C8DF /* CollectionControler.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		F15BE62428635BF400B1C8DF /* Tests */ = {
+		F15BE6292863672000B1C8DF /* Error */ = {
 			isa = PBXGroup;
 			children = (
-				F15BE62528635C0700B1C8DF /* TestContentView.swift */,
+				F15BE62B2863674D00B1C8DF /* OutOfIndexExeption.swift */,
 			);
-			path = Tests;
+			path = Error;
+			sourceTree = "<group>";
+		};
+		F15BE6362864669F00B1C8DF /* MemorizeTests */ = {
+			isa = PBXGroup;
+			children = (
+				F15BE6372864669F00B1C8DF /* MemorizeTests.swift */,
+			);
+			path = MemorizeTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -128,6 +161,24 @@
 			productReference = F15BE60C2863183800B1C8DF /* Memorize.app */;
 			productType = "com.apple.product-type.application";
 		};
+		F15BE6342864669F00B1C8DF /* MemorizeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F15BE63B2864669F00B1C8DF /* Build configuration list for PBXNativeTarget "MemorizeTests" */;
+			buildPhases = (
+				F15BE6312864669F00B1C8DF /* Sources */,
+				F15BE6322864669F00B1C8DF /* Frameworks */,
+				F15BE6332864669F00B1C8DF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F15BE63A2864669F00B1C8DF /* PBXTargetDependency */,
+			);
+			name = MemorizeTests;
+			productName = MemorizeTests;
+			productReference = F15BE6352864669F00B1C8DF /* MemorizeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -140,6 +191,10 @@
 				TargetAttributes = {
 					F15BE60B2863183800B1C8DF = {
 						CreatedOnToolsVersion = 13.4.1;
+					};
+					F15BE6342864669F00B1C8DF = {
+						CreatedOnToolsVersion = 13.4.1;
+						TestTargetID = F15BE60B2863183800B1C8DF;
 					};
 				};
 			};
@@ -157,6 +212,7 @@
 			projectRoot = "";
 			targets = (
 				F15BE60B2863183800B1C8DF /* Memorize */,
+				F15BE6342864669F00B1C8DF /* MemorizeTests */,
 			);
 		};
 /* End PBXProject section */
@@ -171,6 +227,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F15BE6332864669F00B1C8DF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -178,15 +241,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F15BE6122863183800B1C8DF /* ContentView.swift in Sources */,
+				F15BE6122863183800B1C8DF /* CollectionView.swift in Sources */,
 				F15BE6212863248C00B1C8DF /* Card.swift in Sources */,
 				F15BE6102863183800B1C8DF /* MemorizeApp.swift in Sources */,
-				F15BE62628635C0700B1C8DF /* TestContentView.swift in Sources */,
+				F15BE62C2863674D00B1C8DF /* OutOfIndexExeption.swift in Sources */,
+				F15BE6282863603E00B1C8DF /* CollectionControler.swift in Sources */,
 				F15BE62328634B2D00B1C8DF /* Collection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F15BE6312864669F00B1C8DF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F15BE6382864669F00B1C8DF /* MemorizeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F15BE63A2864669F00B1C8DF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F15BE60B2863183800B1C8DF /* Memorize */;
+			targetProxy = F15BE6392864669F00B1C8DF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		F15BE6182863183A00B1C8DF /* Debug */ = {
@@ -361,6 +441,44 @@
 			};
 			name = Release;
 		};
+		F15BE63C2864669F00B1C8DF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 72948N872F;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.robis.MemorizeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Memorize.app/Memorize";
+			};
+			name = Debug;
+		};
+		F15BE63D2864669F00B1C8DF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 72948N872F;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.robis.MemorizeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Memorize.app/Memorize";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -378,6 +496,15 @@
 			buildConfigurations = (
 				F15BE61B2863183A00B1C8DF /* Debug */,
 				F15BE61C2863183A00B1C8DF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F15BE63B2864669F00B1C8DF /* Build configuration list for PBXNativeTarget "MemorizeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F15BE63C2864669F00B1C8DF /* Debug */,
+				F15BE63D2864669F00B1C8DF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

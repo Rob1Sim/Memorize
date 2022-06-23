@@ -7,18 +7,17 @@
 
 import SwiftUI
 
-struct ContentView: View {
-    @State var collections = [Collection( name: "Japonais", cards: [Card( question: "question", reponse: "Réponse")])]
+struct CollectionView: View {
     
-    @State private var isEditing:Bool = false
-    
+       
+    @State var collectionController = CollectionController()
     /**
                 Créer un petit carrée rose qui représente une liste
                 String titre : Le nom de la liste
                 int nbElment : le nombre d'élément que contient cette liste
                 return some View : Un carré rose qui représente une liste
      */
-    fileprivate func categoryComp(_ title: String, _ nbElement:Int) -> some View {
+    fileprivate func categoryComp(_ title: String, _ nbElement:Int, _ id:UUID) ->some View {
         return VStack{
     
             Text(title)
@@ -64,7 +63,7 @@ struct ContentView: View {
         Fonction qui test l'ajout de collections en cliquant sur le bouton blanc
      */
     private func testCollection()->Void{
-        collections.append(Collection(name: "test", cards: [Card(question: "e", reponse: "e")]))
+        collectionController.collections.append(Collection(name: "test", cards: [Card(question: "e", reponse: "e")]))
     }
     
     
@@ -81,8 +80,8 @@ struct ContentView: View {
             
             ScrollView(.vertical){
                 LazyVGrid(columns: [GridItem(.flexible(maximum:110)),GridItem(.flexible(maximum:110)),GridItem(.flexible(maximum:110))],spacing: 10){
-                    ForEach(collections){
-                        collection in categoryComp(collection.getName(), collection.nbCard)
+                    ForEach(collectionController.collections){
+                        collection in categoryComp(collection.getName(), collection.nbCard,collection.getId())
                     }
                     
 
@@ -140,7 +139,7 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        CollectionView()
             .preferredColorScheme(.dark)
     }
 }
