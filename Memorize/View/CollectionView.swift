@@ -146,6 +146,9 @@ struct CollectionView: View {
                         .frame(width: 70, height: 70)
                         .foregroundColor(Color("TitleColor"))
                         
+                }.sheet(isPresented: $popup){
+                    FormAddView(shouldQuit: $popup)
+                        .environment(\.managedObjectContext, managedObjectContext)
                 }
                 Spacer()
                 Button(action:{}){
