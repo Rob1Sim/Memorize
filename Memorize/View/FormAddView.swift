@@ -17,17 +17,15 @@ struct FormAddView: View {
     
     func addToMemory()->Void{
         
-        if textInput != ""{
-            let collectionEntity = CollectionEntity(context: managedObjectContext)
-            collectionEntity.name = textInput
-            collectionEntity.id = UUID()
-            collectionEntity.nbCards = 0
-            //Permet de sauvegarder juste après un ajout
-            if managedObjectContext.hasChanges {
-                PersistenceController.shared.save()
-            }
-            shouldQuit.toggle()
+        let collectionEntity = CollectionEntity(context: managedObjectContext)
+        collectionEntity.name = textInput
+        collectionEntity.id = UUID()
+        collectionEntity.nbCards = 32
+        //Permet de sauvegarder juste après un ajout
+        if managedObjectContext.hasChanges {
+            PersistenceController.shared.save()
         }
+        shouldQuit.toggle()
     }
     
     
@@ -37,7 +35,7 @@ struct FormAddView: View {
                 Section{
                     Text("Ajoutez une collection")
                         .font(.title2)
-                    Text("Entrez un nom de la nouvelle collection")
+                    Text("Entrez un nom de la nouvelle connexion")
                         .font(.caption)
                 }
                 Section{
@@ -53,13 +51,3 @@ struct FormAddView: View {
     }
 }
 
-/*
- struct FormAddView_Previews: PreviewProvider {
-     
-     static var previews: some View {
-         
-         FormAddView()
-     }
- }
-
- */
