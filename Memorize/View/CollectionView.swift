@@ -15,42 +15,56 @@ struct CollectionView: View {
     //permet de récuperer dnas la mémoire par ordre alphabétique toute les collectionEntity
     @FetchRequest(sortDescriptors: [SortDescriptor(\.nbCards)]) var collectionsE: FetchedResults<CollectionEntity>
 
-    /*
-     @State var collections = [Collection( name: "Japonais", cards: [Card( question: "question", reponse: "Réponse")])]
-     */
+    
+    //Variable qui si vrai doit ouvir une page
+    @State var addCollectionOn = false
+    @State var text = ""
+    
+    //Variable qui contient la collection a modifier
+
+    @State var whichCollection:CollectionEntity = CollectionEntity()
+    @State var modifyCollection = false
     
     
-    @State var collectionController = CollectionController()
+    //@State var collectionController = CollectionController()
+    
     /**
                 Créer un petit carrée rose qui représente une liste
                 String titre : Le nom de la liste
                 int nbElment : le nombre d'élément que contient cette liste
                 return some View : Un carré rose qui représente une liste
      */
-    fileprivate func categoryComp(_ title: String, _ nbElement:Int64,_ actualColleciton:CollectionEntity) ->some View {
-        return VStack{
-    
-            Text(title)
-                .font(.system(.title2))
-                .padding([.top, .leading])
-                .frame(width: 100, height: 30, alignment: .leading)
-            
+    fileprivate func categoryComp(_ title: String, _ nbElement:Int64, _  actualColleciton:CollectionEntity) ->some View {
+        return Button(action: {}){
+            VStack{
+        
+                Text(title)
+                    .font(.system(.title2))
+                    .padding([.top, .leading])
+                    .frame(width: 100, height: 30, alignment: .leading)
                 
-            Text("\(nbElement) Elements")
-                .font(.system(size: 14,weight: .light))
-                .padding([.top, .leading])
-                .frame(width: 100, height: 10, alignment: .leading)
-            Spacer()
-            
+                    
+                Text("\(nbElement) Elements")
+                    .font(.system(size: 14,weight: .light))
+                    .padding([.top, .leading])
+                    .frame(width: 100, height: 10, alignment: .leading)
+                Spacer()
+                
+            }
+            .frame(width: 100, height: 100)
+            .background(Color("SecondaryColor"))
+            .cornerRadius(6)
         }
-        .frame(width: 100, height: 100)
-        .background(Color("SecondaryColor"))
-        .cornerRadius(6)
-
-
+        .foregroundColor(.white)
         .contextMenu{
             VStack {
-                Button(action: {}) {
+                Button(action: {
+                    /*
+                     Lance la page de mofication
+                     */
+                    whichCollection = actualColleciton
+                    modifyCollection.toggle()
+                }) {
                     HStack{
                         Text("Modifier")
                         Image(systemName: "pencil")
@@ -135,14 +149,27 @@ struct CollectionView: View {
                     }.padding(.horizontal,8)
                 }
                 Spacer()
-                Button(action:testCollection){
+                Button(action:{
+                    addCollectionOn = true
+                }){
                     
                     Image(systemName: "plus.circle.fill")
                         .resizable()
                         .frame(width: 70, height: 70)
                         .foregroundColor(Color("TitleColor"))
                         
+                }.sheet(isPresented: $addCollectionOn){
+                    //Ouvre le formulaire d'ajout
+                    FormAddView(shouldQuit: $addCollectionOn)
+                        .environment(\.managedObjectContext, managedObjectContext)
                 }
+                .sheet(isPresented: $modifyCollection){
+                    //Ouvre le formulaire de modification
+                    FormModifyView(shouldQuit: $modifyCollection,colToModify: $whichCollection)
+                        .environment(\.managedObjectContext, managedObjectContext)
+                }
+                
+                
                 Spacer()
                 Button(action:{}){
                     ZStack{
@@ -158,9 +185,9 @@ struct CollectionView: View {
                 }
                 
             }.padding(.bottom)
+                
         
         }
-        
         .background(Color("BackgroundColor"))
         
     }
