@@ -35,26 +35,27 @@ struct CollectionView: View {
                 return some View : Un carré rose qui représente une liste
      */
     fileprivate func categoryComp(_ title: String, _ nbElement:Int64, _  actualColleciton:CollectionEntity) ->some View {
-        return VStack{
-    
-            Text(title)
-                .font(.system(.title2))
-                .padding([.top, .leading])
-                .frame(width: 100, height: 30, alignment: .leading)
-            
+        return Button(action: {}){
+            VStack{
+        
+                Text(title)
+                    .font(.system(.title2))
+                    .padding([.top, .leading])
+                    .frame(width: 100, height: 30, alignment: .leading)
                 
-            Text("\(nbElement) Elements")
-                .font(.system(size: 14,weight: .light))
-                .padding([.top, .leading])
-                .frame(width: 100, height: 10, alignment: .leading)
-            Spacer()
-            
+                    
+                Text("\(nbElement) Elements")
+                    .font(.system(size: 14,weight: .light))
+                    .padding([.top, .leading])
+                    .frame(width: 100, height: 10, alignment: .leading)
+                Spacer()
+                
+            }
+            .frame(width: 100, height: 100)
+            .background(Color("SecondaryColor"))
+            .cornerRadius(6)
         }
-        .frame(width: 100, height: 100)
-        .background(Color("SecondaryColor"))
-        .cornerRadius(6)
-
-
+        .foregroundColor(.white)
         .contextMenu{
             VStack {
                 Button(action: {
