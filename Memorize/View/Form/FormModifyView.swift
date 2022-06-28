@@ -7,27 +7,38 @@
 
 import SwiftUI
 
+/**
+ Vue qui permet de modifier une collection du téléphone
+ */
 struct FormModifyView: View {
-    
+    ///Permert la manipulations de donnée dans la mémoire
     @Environment(\.managedObjectContext) var managedObjectContext
     
-    
+    ///Valeur du champ d'entré
     @State var textInput = ""
+    ///Variable qui dit si la vue doit être afficher ou pas
     @Binding var shouldQuit:Bool
+    ///Référence à la collections qui va être modifié
     @Binding var colToModify:CollectionEntity
     
+    /**
+     Modifie dans la mémoire la carte selectionnée
+     
+     */
     func modify()->Void{
         
-        if textInput != ""{
-            colToModify.name = textInput
-            if managedObjectContext.hasChanges {
-                PersistenceController.shared.save()
+        DispatchQueue.global(qos: .userInteractive).async {
+            if textInput != ""{
+                colToModify.name = textInput
+                if managedObjectContext.hasChanges {
+                    PersistenceController.shared.save()
+                }
+                shouldQuit.toggle()
             }
-            shouldQuit.toggle()
         }
     }
     
-    
+    ///Contenue de la vue
     var body: some View {
         VStack{
             Form{

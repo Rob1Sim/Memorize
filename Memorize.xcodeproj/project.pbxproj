@@ -13,13 +13,19 @@
 		F15BE6172863183A00B1C8DF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F15BE6162863183A00B1C8DF /* Preview Assets.xcassets */; };
 		F15BE6212863248C00B1C8DF /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15BE6202863248C00B1C8DF /* Card.swift */; };
 		F15BE62328634B2D00B1C8DF /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15BE62228634B2D00B1C8DF /* Collection.swift */; };
-		F15BE6282863603E00B1C8DF /* CollectionControler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15BE6272863603E00B1C8DF /* CollectionControler.swift */; };
 		F15BE62C2863674D00B1C8DF /* OutOfIndexExeption.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15BE62B2863674D00B1C8DF /* OutOfIndexExeption.swift */; };
 		F15BE6382864669F00B1C8DF /* MemorizeTestsCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15BE6372864669F00B1C8DF /* MemorizeTestsCards.swift */; };
 		F15BE6472864970700B1C8DF /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15BE6462864970700B1C8DF /* PersistenceController.swift */; };
 		F15BE68528649F3500B1C8DF /* Memorize.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F15BE68328649F3500B1C8DF /* Memorize.xcdatamodeld */; };
 		F15BE6972865C48200B1C8DF /* FormAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15BE6962865C48200B1C8DF /* FormAddView.swift */; };
 		F1BE55A4286890BF0060882D /* FormModifyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BE55A3286890BF0060882D /* FormModifyView.swift */; };
+		F1BE55A82869B6E60060882D /* CardCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BE55A72869B6E60060882D /* CardCollectionView.swift */; };
+		F1BE55AC2869B9110060882D /* CommonViewElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BE55AB2869B9110060882D /* CommonViewElements.swift */; };
+		F1BE55AF286B06CB0060882D /* CardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BE55AE286B06CB0060882D /* CardController.swift */; };
+		F1BE55B1286B163D0060882D /* Documentation.docc in Sources */ = {isa = PBXBuildFile; fileRef = F1BE55B0286B163D0060882D /* Documentation.docc */; };
+		F1D6D7AA286B302900666668 /* FormModifyCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D6D7A9286B302900666668 /* FormModifyCard.swift */; };
+		F1D6D7AC286B3AEF00666668 /* MemorizeTestsCardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D6D7AB286B3AEF00666668 /* MemorizeTestsCardController.swift */; };
+		F1D6D7AE286B652800666668 /* FormAddCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D6D7AD286B652800666668 /* FormAddCard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +46,6 @@
 		F15BE6162863183A00B1C8DF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F15BE6202863248C00B1C8DF /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		F15BE62228634B2D00B1C8DF /* Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
-		F15BE6272863603E00B1C8DF /* CollectionControler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionControler.swift; sourceTree = "<group>"; };
 		F15BE62B2863674D00B1C8DF /* OutOfIndexExeption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutOfIndexExeption.swift; sourceTree = "<group>"; };
 		F15BE6352864669F00B1C8DF /* MemorizeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MemorizeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F15BE6372864669F00B1C8DF /* MemorizeTestsCards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemorizeTestsCards.swift; sourceTree = "<group>"; };
@@ -48,6 +53,13 @@
 		F15BE68428649F3500B1C8DF /* Memorize.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Memorize.xcdatamodel; sourceTree = "<group>"; };
 		F15BE6962865C48200B1C8DF /* FormAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormAddView.swift; sourceTree = "<group>"; };
 		F1BE55A3286890BF0060882D /* FormModifyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormModifyView.swift; sourceTree = "<group>"; };
+		F1BE55A72869B6E60060882D /* CardCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCollectionView.swift; sourceTree = "<group>"; };
+		F1BE55AB2869B9110060882D /* CommonViewElements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonViewElements.swift; sourceTree = "<group>"; };
+		F1BE55AE286B06CB0060882D /* CardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardController.swift; sourceTree = "<group>"; };
+		F1BE55B0286B163D0060882D /* Documentation.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = Documentation.docc; sourceTree = "<group>"; };
+		F1D6D7A9286B302900666668 /* FormModifyCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormModifyCard.swift; sourceTree = "<group>"; };
+		F1D6D7AB286B3AEF00666668 /* MemorizeTestsCardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemorizeTestsCardController.swift; sourceTree = "<group>"; };
+		F1D6D7AD286B652800666668 /* FormAddCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormAddCard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +101,7 @@
 		F15BE60E2863183800B1C8DF /* Memorize */ = {
 			isa = PBXGroup;
 			children = (
+				F1BE55B0286B163D0060882D /* Documentation.docc */,
 				F15BE6292863672000B1C8DF /* Error */,
 				F15BE61F2863189000B1C8DF /* Controller */,
 				F15BE61E2863188900B1C8DF /* View */,
@@ -121,9 +134,10 @@
 		F15BE61E2863188900B1C8DF /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F1BE55AD286AFDF80060882D /* Form */,
 				F15BE6112863183800B1C8DF /* CollectionView.swift */,
-				F15BE6962865C48200B1C8DF /* FormAddView.swift */,
-				F1BE55A3286890BF0060882D /* FormModifyView.swift */,
+				F1BE55A72869B6E60060882D /* CardCollectionView.swift */,
+				F1BE55AB2869B9110060882D /* CommonViewElements.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -131,8 +145,8 @@
 		F15BE61F2863189000B1C8DF /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				F15BE6272863603E00B1C8DF /* CollectionControler.swift */,
 				F15BE6462864970700B1C8DF /* PersistenceController.swift */,
+				F1BE55AE286B06CB0060882D /* CardController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -149,8 +163,20 @@
 			isa = PBXGroup;
 			children = (
 				F15BE6372864669F00B1C8DF /* MemorizeTestsCards.swift */,
+				F1D6D7AB286B3AEF00666668 /* MemorizeTestsCardController.swift */,
 			);
 			path = MemorizeTests;
+			sourceTree = "<group>";
+		};
+		F1BE55AD286AFDF80060882D /* Form */ = {
+			isa = PBXGroup;
+			children = (
+				F15BE6962865C48200B1C8DF /* FormAddView.swift */,
+				F1BE55A3286890BF0060882D /* FormModifyView.swift */,
+				F1D6D7A9286B302900666668 /* FormModifyCard.swift */,
+				F1D6D7AD286B652800666668 /* FormAddCard.swift */,
+			);
+			path = Form;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -217,6 +243,7 @@
 			knownRegions = (
 				en,
 				Base,
+				fr,
 			);
 			mainGroup = F15BE6032863183800B1C8DF;
 			productRefGroup = F15BE60D2863183800B1C8DF /* Products */;
@@ -253,16 +280,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1BE55AC2869B9110060882D /* CommonViewElements.swift in Sources */,
+				F1BE55AF286B06CB0060882D /* CardController.swift in Sources */,
 				F15BE6122863183800B1C8DF /* CollectionView.swift in Sources */,
+				F1D6D7AA286B302900666668 /* FormModifyCard.swift in Sources */,
 				F15BE6212863248C00B1C8DF /* Card.swift in Sources */,
 				F15BE6102863183800B1C8DF /* MemorizeApp.swift in Sources */,
 				F15BE62C2863674D00B1C8DF /* OutOfIndexExeption.swift in Sources */,
-				F15BE6282863603E00B1C8DF /* CollectionControler.swift in Sources */,
 				F15BE6972865C48200B1C8DF /* FormAddView.swift in Sources */,
 				F15BE68528649F3500B1C8DF /* Memorize.xcdatamodeld in Sources */,
 				F15BE62328634B2D00B1C8DF /* Collection.swift in Sources */,
 				F1BE55A4286890BF0060882D /* FormModifyView.swift in Sources */,
+				F1BE55B1286B163D0060882D /* Documentation.docc in Sources */,
 				F15BE6472864970700B1C8DF /* PersistenceController.swift in Sources */,
+				F1D6D7AE286B652800666668 /* FormAddCard.swift in Sources */,
+				F1BE55A82869B6E60060882D /* CardCollectionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,6 +303,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F15BE6382864669F00B1C8DF /* MemorizeTestsCards.swift in Sources */,
+				F1D6D7AC286B3AEF00666668 /* MemorizeTestsCardController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

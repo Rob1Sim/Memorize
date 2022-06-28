@@ -8,10 +8,11 @@
 import Foundation
 
 
-/*
+/**
  Gère les erreur en rapport avec la manipulation de listes
- indexNotInTheList est soulevé si un index n'est pas présent dans la liste
+ `indexNotInTheList` est soulevé si un index n'est pas présent dans la liste
  */
 enum OutOfIndexExeption:Error{
+    ///Si l'index n'est pas dans la list
     case indexNotInTheList
 }
