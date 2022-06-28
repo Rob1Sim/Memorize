@@ -6,7 +6,6 @@
 //
 
 import Foundation
-
 /**
  Struct qui s'occupe de la gestion des donnée de la vue des carte
  */
@@ -26,4 +25,21 @@ struct CardController{
         }
         
     }
+    
+    /**
+     Cherche dans une liste l'index d'un élement cherché
+     - Parameter obj L'objet que l'on cherche dans la liste
+     - Parameter list La liste dans laquel on recherche
+     - Returns L'index de l'élément dans la liste
+     */
+    public static func getIdFromAList(obj:AnyObject,list:Array<AnyObject>)->Int{
+        var res = -1
+        for i in 0...list.count-1{
+            if list[i] === obj{
+                res = i
+            }
+        }
+        return res
+    }
+    
 }

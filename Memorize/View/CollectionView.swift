@@ -46,7 +46,7 @@ struct CollectionView: View {
      - returns : `some View` Un carré rose qui représente une liste
      */
     fileprivate func categoryComp(_ title: String, _ nbElement:Int64, _  actualColleciton:CollectionEntity) ->some View {
-        return Button(action: {}){
+        return NavigationLink(destination: CardCollectionView(collectionParent: .constant(actualColleciton))){
             VStack{
                 
                 Text(title)
@@ -85,8 +85,10 @@ struct CollectionView: View {
                     /*
                      Supprime de la mémoire la collection
                      */
-                    managedObjectContext.delete(actualColleciton)
-                    PersistenceController.shared.save()
+                    DispatchQueue.global(qos: .userInteractive).async {
+                        managedObjectContext.delete(actualColleciton)
+                        PersistenceController.shared.save()
+                    }
                     
                 }) {
                     HStack{
@@ -107,45 +109,47 @@ struct CollectionView: View {
     ///Contenue de la vue
     var body: some View {
         
-        VStack {
-            Spacer()
-            Text("Accueil")
-                .font(.system(.largeTitle))
-                .padding()
-                .foregroundColor(Color("TitleColor"))
-            
-            
-            ScrollView(.vertical){
-                LazyVGrid(columns: [GridItem(.flexible(maximum:110)),GridItem(.flexible(maximum:110)),GridItem(.flexible(maximum:110))],spacing: 10){
-                    
-                    ForEach(collectionsE){
-                        collection in categoryComp(collection.name ?? "Aucun nom", collection.nbCards,collection)
+        NavigationView {
+            VStack {
+                Spacer()
+                Text("Accueil")
+                    .font(.system(.largeTitle))
+                    .padding()
+                    .foregroundColor(Color("TitleColor"))
+                
+                
+                ScrollView(.vertical){
+                    LazyVGrid(columns: [GridItem(.flexible(maximum:110)),GridItem(.flexible(maximum:110)),GridItem(.flexible(maximum:110))],spacing: 10){
+                        
+                        ForEach(collectionsE){
+                            collection in categoryComp(collection.name ?? "Aucun nom", collection.nbCards,collection)
+                        }
+                        
+                        
+                        
                     }
-                    
-                    
-                    
                 }
+                .padding(.top,100)
+                
+                CommonViewElements.actionBarAtBottom(actionPlus: {
+                    addCollectionOn = true
+                })
+                .padding(.bottom)
+                .sheet(isPresented: $addCollectionOn){
+                    //Ouvre le formulaire d'ajout
+                    FormAddView(shouldQuit: $addCollectionOn)
+                        .environment(\.managedObjectContext, managedObjectContext)
+                }.sheet(isPresented: $modifyCollection){
+                    //Ouvre le formulaire de modification
+                    FormModifyView(shouldQuit: $modifyCollection,colToModify: $whichCollection)
+                        .environment(\.managedObjectContext, managedObjectContext)
+                }
+                Spacer()
+                
+                
             }
-            .padding(.top,100)
-            
-            CommonViewElements.actionBarAtBottom(actionPlus: {
-                addCollectionOn = true
-            })
-            .padding(.bottom)
-            .sheet(isPresented: $addCollectionOn){
-                //Ouvre le formulaire d'ajout
-                FormAddView(shouldQuit: $addCollectionOn)
-                    .environment(\.managedObjectContext, managedObjectContext)
-            }.sheet(isPresented: $modifyCollection){
-                //Ouvre le formulaire de modification
-                FormModifyView(shouldQuit: $modifyCollection,colToModify: $whichCollection)
-                    .environment(\.managedObjectContext, managedObjectContext)
-            }
-            Spacer()
-            
-            
+            .background(Color("BackgroundColor"))
         }
-        .background(Color("BackgroundColor"))
         
     }
 }

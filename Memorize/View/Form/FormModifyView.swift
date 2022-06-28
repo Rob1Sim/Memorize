@@ -27,12 +27,14 @@ struct FormModifyView: View {
      */
     func modify()->Void{
         
-        if textInput != ""{
-            colToModify.name = textInput
-            if managedObjectContext.hasChanges {
-                PersistenceController.shared.save()
+        DispatchQueue.global(qos: .userInteractive).async {
+            if textInput != ""{
+                colToModify.name = textInput
+                if managedObjectContext.hasChanges {
+                    PersistenceController.shared.save()
+                }
+                shouldQuit.toggle()
             }
-            shouldQuit.toggle()
         }
     }
     

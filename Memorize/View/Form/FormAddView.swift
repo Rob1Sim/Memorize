@@ -23,16 +23,20 @@ struct FormAddView: View {
      Ajoute une collection a la mémoire
      */
     func addToMemory()->Void{
-        
-        let collectionEntity = CollectionEntity(context: managedObjectContext)
-        collectionEntity.name = textInput
-        collectionEntity.id = UUID()
-        collectionEntity.nbCards = 0
-        //Permet de sauvegarder juste après un ajout
-        if managedObjectContext.hasChanges {
-            PersistenceController.shared.save()
+        DispatchQueue.global(qos: .userInteractive).async {
+            if textInput != ""{
+                let collectionEntity = CollectionEntity(context: managedObjectContext)
+                collectionEntity.name = textInput
+                collectionEntity.id = UUID()
+                collectionEntity.nbCards = 0
+                //Permet de sauvegarder juste après un ajout
+                if managedObjectContext.hasChanges {
+                    PersistenceController.shared.save()
+                }
+                shouldQuit.toggle()
+            }
         }
-        shouldQuit.toggle()
+        
     }
     
     ///Contenue de la vue
