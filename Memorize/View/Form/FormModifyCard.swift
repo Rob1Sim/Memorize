@@ -1,5 +1,5 @@
 //
-//  FormModifyCard.swift
+//  FormAddCard.swift
 //  Memorize
 //
 //  Created by Robin Simonneau on 28/06/2022.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct FormAddCard: View {
+struct FormModifyCard: View {
     
     ///Permert la manipulations de donnée dans la mémoire
     @Environment(\.managedObjectContext) var managedObjectContext
@@ -24,30 +24,23 @@ struct FormAddCard: View {
     ///Variable qui dit si la vue doit être afficher ou pas
     @Binding var shouldQuit:Bool
     
-    ///Variable qui référence la collection parente
-    @Binding var collectionParent:CollectionEntity
+    /// Reférence a la carte qui va être modifié
+    @Binding var cardEntity:CardsEntity
     
-    ///Variable qui contient le tableau qui est affiché dans la vue des carte de la collection
+    /// Variable qui contient le tableau qui est affiché dans la vue des carte de la collection
     @Binding var cardToShow:Array<CardsEntity>
     /**
      Ajoute une carte a la mémoire
      */
-    func addToMemory()->Void{
+    func modify()->Void{
         
         if question != "" && response != ""{
             DispatchQueue.global(qos: .userInteractive).async {
-                let cardEntity = CardsEntity(context: managedObjectContext)
-                cardEntity.id = UUID()
                 cardEntity.question = question
                 cardEntity.questionSup = supQuestion
                 cardEntity.response = response
                 cardEntity.responseSup = supResponse
                 
-                
-                cardEntity.cardRelation = collectionParent
-                collectionParent.addToCollectionRelation(cardEntity)
-                cardToShow.append(cardEntity)
-                collectionParent.nbCards = Int64(collectionParent.collectionRelation!.count)
                 
                 //Permet de sauvegarder juste après un ajout
                 if managedObjectContext.hasChanges {
@@ -63,7 +56,7 @@ struct FormAddCard: View {
         VStack{
             Form{
                 Section{
-                    Text("Ajouter une nouvelle carte")
+                    Text("Modifier une carte")
                         .font(.title2)
                     
                 }
@@ -86,8 +79,8 @@ struct FormAddCard: View {
                         TextField("Et pas NewYork", text: $supResponse)
                     }
                 }
-                Button(action: addToMemory){
-                    Text("Ajouter")
+                Button(action: modify){
+                    Text("Modifiez")
                 }
                 
             }
@@ -96,3 +89,10 @@ struct FormAddCard: View {
     }
 }
 
+/*
+ struct FormAddCard_Previews: PreviewProvider {
+     static var previews: some View {
+         FormAddCard(shouldQuit: .constant(true),collectionParent: .constant(CollectionEntity()))
+     }
+ }
+ */

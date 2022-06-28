@@ -23,11 +23,26 @@ struct CardCollectionView: View {
     
     
 
-    ///Variable qui si vrai doit ouvir une page
+    ///Variable qui si vrai doit ouvir une page pour ajouter une carte
     @State var addCardOn = false
+    ///Variable qui si vrai doit ouvrie une page pour modifier une carte
+    @State var editCardOn = false
+    
+    ///Si est vrai active la possibilité d'éditer
+    @State var isEditing = false
+    
+    ///Désigne la carte selectionné qui doit être modifié
+    @State var whichCard:CardsEntity = CardsEntity()
     
     /// Carte a afficher
     @State var cards:Array<CardsEntity> = []
+    
+    
+    func setActualCard(newCard:CardsEntity){
+        whichCard = newCard
+        editCardOn.toggle()
+        isEditing = false
+    }
     
     
     /**
@@ -48,28 +63,62 @@ struct CardCollectionView: View {
     }
     
     /**
+     Supprime de la mémoire une carte
+     - Parameter actualCards: La carte a supprimé
+     */
+    func deleteCard(actualCards:CardsEntity){
+        DispatchQueue.global(qos: .userInteractive).async {
+            managedObjectContext.delete(actualCards)
+            let id = CardController.getIdFromAList(obj: actualCards, list: cards)
+            cards.remove(at: id)
+            
+            PersistenceController.shared.save()
+            
+            //On actualise le nombre de carte
+            collectionParent.nbCards = Int64(collectionParent.collectionRelation!.count)
+            
+            PersistenceController.shared.save()
+        }
+    }
+    
+    /**
      Créer un petit carrée rose qui représente une liste
      - Parameter actualCards : La carte qui va être affiché
      - returns : `some View` Un carré rose qui représente une liste
      */
     fileprivate func categoryCard(_  actualCards:CardsEntity) ->some View {
-        return Button(action: {}){
-            VStack{
-                
-                Text(actualCards.question ?? "Pas de question")
-                    .font(.system(.title2))
-                    .padding([.top, .leading])
-                    .frame(width: 350, height: 30, alignment: .leading)
-                
-                Text(actualCards.response ?? "Pas de reponse")
-                    .font(.system(.caption))
-                    .padding([.leading])
-                    .frame(width: 350, height: 30, alignment: .leading)
-                
-                Spacer()
-                
+        return Button(action: {
+            if !isEditing{
+                setActualCard(newCard: actualCards)
             }
-            .frame(width: 350, height: 70)
+            
+        }){
+            HStack {
+                VStack{
+                    
+                    Text(actualCards.question ?? "Pas de question")
+                        .font(.system(.title2))
+                        .padding([.top, .leading])
+                        .frame(width: 300, height: 30, alignment: .leading)
+                    
+                    Text(actualCards.response ?? "Pas de reponse")
+                        .font(.system(.caption))
+                        .padding([.leading], 20.0)
+                        .frame(width: 300, height: 30, alignment: .leading)
+                    
+                    Spacer()
+                    
+                }
+                if isEditing{
+                    Button(action:{
+                        deleteCard(actualCards: actualCards)
+                        isEditing = false
+                    }) {
+                        Image(systemName: "multiply")
+                    }
+                }
+                
+            }.frame(width: 350, height: 70)
             .background(Color("SecondaryColor"))
             .cornerRadius(6)
         }
@@ -80,7 +129,7 @@ struct CardCollectionView: View {
                     /*
                      Lance la page de mofication
                      */
-                    //setActualCollection(newCollection: actualColleciton)
+                    setActualCard(newCard: actualCards)
                 }) {
                     HStack{
                         Text("Modifier")
@@ -93,22 +142,8 @@ struct CardCollectionView: View {
                      Supprime de la mémoire la collection
                      */
                     
-                    DispatchQueue.global(qos: .userInteractive).async {
-                        managedObjectContext.delete(actualCards)
-                        let id = CardController.getIdFromAList(obj: actualCards, list: cards)
-                        cards.remove(at: id)
-                        
-                        PersistenceController.shared.save()
-                        
-                        //On actualise le nombre de carte
-                        collectionParent.nbCards = Int64(collectionParent.collectionRelation!.count)
-                        
-                        PersistenceController.shared.save()
-                    }
-                    
-                    
-        
-                    
+                    deleteCard(actualCards: actualCards)
+                          
                     
                 }) {
                     HStack{
@@ -145,8 +180,14 @@ struct CardCollectionView: View {
             }
             .padding(.top,10)
             
-            CommonViewElements.actionBarAtBottom(actionPlus: {
+            CommonViewElements.actionBarAtBottomPlay(actionPlus: {
                 addCardOn = true
+                isEditing = false
+            },actionPlay: {}, actionEdit: {
+                //Si il n'ya pas de carte on a pas besoin de pouvoir les supprimer
+                if cards.count != 0{
+                    isEditing.toggle()
+                }
                 
             })
             .padding(.bottom)
@@ -154,11 +195,11 @@ struct CardCollectionView: View {
                 //Ouvre le formulaire d'ajout
                 FormAddCard(shouldQuit: $addCardOn,collectionParent: $collectionParent,cardToShow: $cards)
                     .environment(\.managedObjectContext, managedObjectContext)
-            }/*.sheet(isPresented: $modifyCollection){
+            }.sheet(isPresented: $editCardOn){
                 //Ouvre le formulaire de modification
-                FormModifyView(shouldQuit: $modifyCollection,colToModify: $whichCollection)
+                FormModifyCard(shouldQuit: $editCardOn, cardEntity:$whichCard, cardToShow: $cards)
                     .environment(\.managedObjectContext, managedObjectContext)
-            }*/
+            }
             Spacer()
             
             //Code executé quand la vue apparait
