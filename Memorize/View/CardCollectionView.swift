@@ -22,7 +22,7 @@ struct CardCollectionView: View {
     @FetchRequest(sortDescriptors: [SortDescriptor(\.question)]) var cardE: FetchedResults<CardsEntity>
     
     
-
+    
     ///Variable qui si vrai doit ouvir une page pour ajouter une carte
     @State var addCardOn = false
     ///Variable qui si vrai doit ouvrie une page pour modifier une carte
@@ -37,6 +37,8 @@ struct CardCollectionView: View {
     /// Carte a afficher
     @State var cards:Array<CardsEntity> = []
     
+    ///si vrai lance une animation
+    @State var isErasing = false
     
     func setActualCard(newCard:CardsEntity){
         whichCard = newCard
@@ -67,7 +69,12 @@ struct CardCollectionView: View {
      - Parameter actualCards: La carte a supprimé
      */
     func deleteCard(actualCards:CardsEntity){
+        isErasing.toggle()
         DispatchQueue.global(qos: .userInteractive).async {
+            
+            do{
+                sleep(2)
+            }
             managedObjectContext.delete(actualCards)
             let id = CardController.getIdFromAList(obj: actualCards, list: cards)
             cards.remove(at: id)
@@ -78,6 +85,7 @@ struct CardCollectionView: View {
             collectionParent.nbCards = Int64(collectionParent.collectionRelation!.count)
             
             PersistenceController.shared.save()
+            isErasing.toggle()
         }
     }
     
@@ -111,6 +119,7 @@ struct CardCollectionView: View {
                 }
                 if isEditing{
                     Button(action:{
+                        
                         deleteCard(actualCards: actualCards)
                         isEditing = false
                     }) {
@@ -119,10 +128,13 @@ struct CardCollectionView: View {
                 }
                 
             }.frame(width: 350, height: 70)
-            .background(Color("SecondaryColor"))
-            .cornerRadius(6)
+                .background(Color("SecondaryColor"))
+                .cornerRadius(6)
+                
         }
         .foregroundColor(.white)
+        .opacity(!isErasing ? 100: 0.0)
+        .animation(.easeInOut(duration: 1.5), value: isErasing )
         .contextMenu{
             VStack {
                 Button(action: {
@@ -143,7 +155,7 @@ struct CardCollectionView: View {
                      */
                     
                     deleteCard(actualCards: actualCards)
-                          
+                    
                     
                 }) {
                     HStack{
@@ -161,7 +173,7 @@ struct CardCollectionView: View {
     ///Contenue de la vue
     var body: some View {
         
-                
+        
         VStack {
             Text(collectionParent.name ?? "No name")
                 .font(.system(.largeTitle))
@@ -212,7 +224,7 @@ struct CardCollectionView: View {
             }
             
             
-        
+            
         })
         .background(Color("BackgroundColor"))
         
