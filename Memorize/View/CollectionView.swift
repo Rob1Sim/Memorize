@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct CollectionView: View {
     
@@ -13,12 +14,11 @@ struct CollectionView: View {
     
     
     //permet de récuperer dnas la mémoire par ordre alphabétique toute les collectionEntity
-    @FetchRequest(sortDescriptors: [SortDescriptor(\.nbCards)]) var collectionsE: FetchedResults<CollectionEntity>
-    
+    @FetchRequest(sortDescriptors: [SortDescriptor(\.name)]) var collectionsE: FetchedResults<CollectionEntity>
+
     
     //Variable qui si vrai doit ouvir une page
     @State var addCollectionOn = false
-    @State var text = ""
     
     //Variable qui contient la collection a modifier
     

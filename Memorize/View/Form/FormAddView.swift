@@ -20,7 +20,7 @@ struct FormAddView: View {
         let collectionEntity = CollectionEntity(context: managedObjectContext)
         collectionEntity.name = textInput
         collectionEntity.id = UUID()
-        collectionEntity.nbCards = 32
+        collectionEntity.nbCards = 0
         //Permet de sauvegarder juste après un ajout
         if managedObjectContext.hasChanges {
             PersistenceController.shared.save()

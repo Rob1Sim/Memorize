@@ -12,27 +12,7 @@ struct CommonViewElements {
     
     
     
-    /*
-     Espace ou apparaisse toutes les tuiles avec la possibilité de scroller pour toutes les voirs
-     
-     scrollViewContent:AnyView : Le contenue que doit afficher la vue, une boucle for pour afficher toutes les tuiles par exemple
-     maxLenghtColumn:CGFloat : La taille maximum que peut prendre une colonne
-     spaceBetweenColumn:CGFloat : L'espace qu'il doit y avoir entre deux colonnes
-     paddingFromTheTop:CGFloat : La taille du padding depuis le haut de la case
-     
-     return some View: Retourne une vue
-     */
-    public static func scrollView(collectionType:Range<Int>, maxLenghtColumn mlc:CGFloat = 110, spaceBetweenColumn sbc:CGFloat = 10, paddingFromTheTop padTop:CGFloat = 100,functionOfFor:@escaping ()->AnyView)->some View{
-        
-        return ScrollView(.vertical){
-            LazyVGrid(columns: [GridItem(.flexible(maximum:mlc)),GridItem(.flexible(maximum:mlc)),GridItem(.flexible(maximum:110))],spacing: sbc){
-                
-                //Trouver un moyen d'integrer une vue ici (fonction statique ?)
-                
-            }
-        }
-        .padding(.top,padTop)
-    }
+    
     
     
     /*

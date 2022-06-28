@@ -22,6 +22,7 @@
 		F1BE55A4286890BF0060882D /* FormModifyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BE55A3286890BF0060882D /* FormModifyView.swift */; };
 		F1BE55A82869B6E60060882D /* CardCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BE55A72869B6E60060882D /* CardCollectionView.swift */; };
 		F1BE55AC2869B9110060882D /* CommonViewElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BE55AB2869B9110060882D /* CommonViewElements.swift */; };
+		F1BE55AF286B06CB0060882D /* CardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BE55AE286B06CB0060882D /* CardController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		F1BE55A3286890BF0060882D /* FormModifyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormModifyView.swift; sourceTree = "<group>"; };
 		F1BE55A72869B6E60060882D /* CardCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCollectionView.swift; sourceTree = "<group>"; };
 		F1BE55AB2869B9110060882D /* CommonViewElements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonViewElements.swift; sourceTree = "<group>"; };
+		F1BE55AE286B06CB0060882D /* CardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,9 +127,8 @@
 		F15BE61E2863188900B1C8DF /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F1BE55AD286AFDF80060882D /* Form */,
 				F15BE6112863183800B1C8DF /* CollectionView.swift */,
-				F15BE6962865C48200B1C8DF /* FormAddView.swift */,
-				F1BE55A3286890BF0060882D /* FormModifyView.swift */,
 				F1BE55A72869B6E60060882D /* CardCollectionView.swift */,
 				F1BE55AB2869B9110060882D /* CommonViewElements.swift */,
 			);
@@ -139,6 +140,7 @@
 			children = (
 				F15BE6272863603E00B1C8DF /* CollectionControler.swift */,
 				F15BE6462864970700B1C8DF /* PersistenceController.swift */,
+				F1BE55AE286B06CB0060882D /* CardController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -157,6 +159,15 @@
 				F15BE6372864669F00B1C8DF /* MemorizeTestsCards.swift */,
 			);
 			path = MemorizeTests;
+			sourceTree = "<group>";
+		};
+		F1BE55AD286AFDF80060882D /* Form */ = {
+			isa = PBXGroup;
+			children = (
+				F15BE6962865C48200B1C8DF /* FormAddView.swift */,
+				F1BE55A3286890BF0060882D /* FormModifyView.swift */,
+			);
+			path = Form;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,6 +271,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F1BE55AC2869B9110060882D /* CommonViewElements.swift in Sources */,
+				F1BE55AF286B06CB0060882D /* CardController.swift in Sources */,
 				F15BE6122863183800B1C8DF /* CollectionView.swift in Sources */,
 				F15BE6212863248C00B1C8DF /* Card.swift in Sources */,
 				F15BE6102863183800B1C8DF /* MemorizeApp.swift in Sources */,

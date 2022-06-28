@@ -16,6 +16,10 @@ struct FormModifyView: View {
     @Binding var shouldQuit:Bool
     @Binding var colToModify:CollectionEntity
     
+    /*
+     Modifie dans la mémoire la carte selectionnée
+     
+     */
     func modify()->Void{
         
         if textInput != ""{
