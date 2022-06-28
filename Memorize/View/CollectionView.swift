@@ -8,6 +8,9 @@
 import SwiftUI
 import CoreData
 
+/**
+ Vue qui s'occupe d'afficher les collections, c'est aussi la vue d'accueil
+ */
 struct CollectionView: View {
     
     @Environment(\.managedObjectContext) var managedObjectContext
@@ -38,9 +41,9 @@ struct CollectionView: View {
     
     /**
      Créer un petit carrée rose qui représente une liste
-     String titre : Le nom de la liste
-     int nbElment : le nombre d'élément que contient cette liste
-     return some View : Un carré rose qui représente une liste
+     - Parameter titre : Le nom de la liste
+     - Parameter nbElment : le nombre d'élément que contient cette liste
+     - returns : `some View` Un carré rose qui représente une liste
      */
     fileprivate func categoryComp(_ title: String, _ nbElement:Int64, _  actualColleciton:CollectionEntity) ->some View {
         return Button(action: {}){
@@ -101,7 +104,7 @@ struct CollectionView: View {
     
     
     
-    
+    ///Contenue de la vue
     var body: some View {
         
         VStack {

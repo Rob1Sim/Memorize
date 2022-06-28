@@ -7,14 +7,21 @@
 
 import SwiftUI
 
+/**
+ Vue qui permet d'ajouté une collection a la mémoire du téléphone
+ */
 struct FormAddView: View {
-    
+    ///Permert la manipulations de donnée dans la mémoire
     @Environment(\.managedObjectContext) var managedObjectContext
     
-    
+    ///Valeur du champ d'entré
     @State var textInput = ""
+    ///Variable qui dit si la vue doit être afficher ou pas
     @Binding var shouldQuit:Bool
     
+    /**
+     Ajoute une collection a la mémoire
+     */
     func addToMemory()->Void{
         
         let collectionEntity = CollectionEntity(context: managedObjectContext)
@@ -28,7 +35,7 @@ struct FormAddView: View {
         shouldQuit.toggle()
     }
     
-    
+    ///Contenue de la vue
     var body: some View {
         VStack{
             Form{

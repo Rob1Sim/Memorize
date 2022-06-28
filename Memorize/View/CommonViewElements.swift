@@ -7,6 +7,10 @@
 
 import SwiftUI
 
+/**
+ Différente méthode qui sont des composants de l'UI
+ - Note Permet de ne pas dupliquer du code
+ */
 struct CommonViewElements {
     
     
@@ -15,11 +19,11 @@ struct CommonViewElements {
     
     
     
-    /*
+    /**
      Barre d'action en bas de l'écran
      
-     actionPlus:()->Void : Action que le bouton croix doit executer quand on clique dessus
-     return some View : Retourne une vue
+     - Parameter actionPlus:`()->Void` : Action que le bouton croix doit executer quand on clique dessus
+     - returns `some View` : Retourne une vue
      */
     public static func actionBarAtBottom(actionPlus actionB:@escaping ()->Void = {})->some View {
         

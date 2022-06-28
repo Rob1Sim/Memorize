@@ -7,6 +7,9 @@
 
 import SwiftUI
 
+/**
+ Vue qui s'occupe d'afficher toute les cartes présente dans une collection
+ */
 struct CardCollectionView: View {
     
     @Environment(\.managedObjectContext) var managedObjectContext
@@ -23,7 +26,7 @@ struct CardCollectionView: View {
     @State var addCardOn = false
     
     
-    
+    ///Contenue de la vue
     var body: some View {
         
                 

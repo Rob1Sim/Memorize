@@ -10,7 +10,7 @@ import SwiftUI
 @main
 struct MemorizeApp: App {
     @Environment(\.scenePhase) var scenePhase
-    //Enregiste le controlleur persistant
+    ///Enregiste le controlleur persistant
     let persistenceController = PersistenceController.shared
     
 

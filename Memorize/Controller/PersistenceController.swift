@@ -8,9 +8,12 @@
 import CoreData
 import SwiftUI
 
+/**
+ Struct qui s'occupe de enregistrer et récupérer de la mémorie des données
+ */
 struct PersistenceController {
     
-    //Variable static qui permet de lancer le controlleur
+    ///Variable static qui permet de lancer le controlleur
     static let shared = PersistenceController()
     
     //Fonction de test -------------------------------
@@ -68,6 +71,9 @@ struct PersistenceController {
         container.viewContext.automaticallyMergesChangesFromParent = true
     }
     
+    /**
+     Sauvegarde dans la mémoire les nouvelles données
+     */
     func save(){
         let context = container.viewContext
         if context.hasChanges {

@@ -8,6 +8,9 @@
 import XCTest
 @testable import Memorize
 
+/**
+ Class qui gère des tests de base sur la créations de collections
+ */
 class MemorizeTestsCards: XCTestCase {
     
     let testCard = Card(question: "Test", reponse: "Réponse de test")
@@ -20,8 +23,9 @@ class MemorizeTestsCards: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
     
-    /*
+    /**
      Réalise des test pour voir si la création d'une carte fonctionne bien
+     - throws une erreur si le score n'est pas égale a ce qu'il devrait être
      */
     func testCreateCard() throws{
         
@@ -32,8 +36,9 @@ class MemorizeTestsCards: XCTestCase {
         
     }
     
-    /*
+    /**
      Réalise des test pour voir si le score est bien mis a jour comme il faut
+     - throws une erreur si le score n'est pas égale a ce qu'il devrait être
      */
     func testModifyCardScore() throws{
         Card.calculScore(card: testCard, isGood: true)

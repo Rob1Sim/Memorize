@@ -7,11 +7,18 @@
 
 import Foundation
 
-
+/**
+ Structure servant de modele pour la Collection
+ - Note pour l'instant non-utlisé
+ */
 struct Collection: Identifiable{
+    ///id de la collection
     internal let id = UUID()
+    ///nom de la collection
     private var name:String
+    ///Tableau des cartes  de la collection
     private var cards:Array<Card>
+    ///nombre de carte de la collection
     public var nbCard:Int{
         get{
             return cards.count
@@ -25,7 +32,7 @@ struct Collection: Identifiable{
     
     /**
                 Recupère l'id de la carte
-                return Int id
+                - returns Int id
      **/
     public func getId()->UUID{
         return self.id
@@ -34,7 +41,7 @@ struct Collection: Identifiable{
     
     /**
                 Recupère le nom de la carte
-                return String name
+                - returns  name
      **/
     public func getName()->String{
         return self.name
@@ -42,7 +49,7 @@ struct Collection: Identifiable{
     
     /**
                 Recupère les cartes présente dans la collection
-                return Array<card> cards
+                - returns  cards
      **/
     public func getCards()->Array<Card>{
         return self.cards
@@ -50,7 +57,7 @@ struct Collection: Identifiable{
     
     /**
                 Modifie le nom avec le nom passé en paramètre
-                String n Nom
+                - Parameter n le nom
      **/
     public mutating func setName(value n:String)->Void{
         self.name = n

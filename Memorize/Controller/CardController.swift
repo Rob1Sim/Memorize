@@ -7,11 +7,15 @@
 
 import Foundation
 
+/**
+ Struct qui s'occupe de la gestion des donnée de la vue des carte
+ */
 struct CardController{
     
-    /*
+    /**
      Fonction qui met a jour le nombre de carte présente dans la collections quand on en crée une nouvelle
-     CollectionEntity collectionParent : Collection a mettre a jour
+     - parameter collectionParent : Collection a mettre a jour
+     - note: Il utilise le thread d'arrière plan le resultat est traité a coté
      */
     public static func actualizeCollection(collectionParent:CollectionEntity)->Void{
         
