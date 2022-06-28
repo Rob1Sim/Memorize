@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import CoreData
 
 /**
  Vue qui s'occupe d'afficher les collections, c'est aussi la vue d'accueil
@@ -23,14 +22,13 @@ struct CollectionView: View {
     //Variable qui si vrai doit ouvir une page
     @State var addCollectionOn = false
     
-    //Variable qui contient la collection a modifier
-    
+    ///Variable qui contient la collection a modifier
     @State var whichCollection:CollectionEntity = CollectionEntity()
     @State var modifyCollection = false
     
-    /*
+    /**
      Selectionne la collection selectionné par l'utilisateur
-     newCollection:CollectionEntity : LA nouvelle collection selectionné
+     - Parameter newCollection : La nouvelle collection selectionné
      */
     public func setActualCollection(newCollection:CollectionEntity)->Void{
         whichCollection = newCollection
@@ -38,6 +36,8 @@ struct CollectionView: View {
     }
     
     //@State var collectionController = CollectionController()
+    
+    
     
     /**
      Créer un petit carrée rose qui représente une liste
@@ -51,13 +51,14 @@ struct CollectionView: View {
                 
                 Text(title)
                     .font(.system(.title2))
-                    .padding([.top, .leading])
+                    .multilineTextAlignment(.leading)
+                    .padding(.top)
                     
                 
                 
                 Text("\(nbElement) Elements")
                     .font(.system(size: 14,weight: .light))
-                    .padding([.top, .leading])
+                    .padding([.top, .leading], 9.0)
                     .frame(width: 100, height: 10, alignment: .leading)
                 Spacer()
                 
@@ -65,7 +66,9 @@ struct CollectionView: View {
             .frame(width: 100, height: 100)
             .background(Color("SecondaryColor"))
             .cornerRadius(6)
+            
         }
+            
         .foregroundColor(.white)
         .contextMenu{
             VStack {
@@ -85,9 +88,13 @@ struct CollectionView: View {
                     /*
                      Supprime de la mémoire la collection
                      */
+                    
+                    
                     DispatchQueue.global(qos: .userInteractive).async {
+                       
                         managedObjectContext.delete(actualColleciton)
                         PersistenceController.shared.save()
+                        
                     }
                     
                 }) {
