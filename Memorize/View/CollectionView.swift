@@ -52,7 +52,7 @@ struct CollectionView: View {
                 Text(title)
                     .font(.system(.title2))
                     .padding([.top, .leading])
-                    .frame(width: 100, height: 30, alignment: .leading)
+                    
                 
                 
                 Text("\(nbElement) Elements")
@@ -111,10 +111,9 @@ struct CollectionView: View {
         
         NavigationView {
             VStack {
-                Spacer()
                 Text("Accueil")
                     .font(.system(.largeTitle))
-                    .padding()
+                    .padding([.leading, .bottom, .trailing])
                     .foregroundColor(Color("TitleColor"))
                 
                 
@@ -129,7 +128,7 @@ struct CollectionView: View {
                         
                     }
                 }
-                .padding(.top,100)
+                .padding(.top, 10)
                 
                 CommonViewElements.actionBarAtBottom(actionPlus: {
                     addCollectionOn = true
@@ -149,6 +148,7 @@ struct CollectionView: View {
                 
             }
             .background(Color("BackgroundColor"))
+            Spacer()
         }
         
     }

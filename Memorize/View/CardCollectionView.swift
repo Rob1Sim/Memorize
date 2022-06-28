@@ -59,14 +59,17 @@ struct CardCollectionView: View {
                 Text(actualCards.question ?? "Pas de question")
                     .font(.system(.title2))
                     .padding([.top, .leading])
-                    .frame(width: 100, height: 30, alignment: .leading)
+                    .frame(width: 350, height: 30, alignment: .leading)
                 
-                
+                Text(actualCards.response ?? "Pas de reponse")
+                    .font(.system(.caption))
+                    .padding([.leading])
+                    .frame(width: 350, height: 30, alignment: .leading)
                 
                 Spacer()
                 
             }
-            .frame(width: 100, height: 100)
+            .frame(width: 350, height: 70)
             .background(Color("SecondaryColor"))
             .cornerRadius(6)
         }
@@ -125,7 +128,6 @@ struct CardCollectionView: View {
         
                 
         VStack {
-            Spacer()
             Text(collectionParent.name ?? "No name")
                 .font(.system(.largeTitle))
                 .padding()
@@ -133,7 +135,7 @@ struct CardCollectionView: View {
             
             
             ScrollView(.vertical){
-                LazyVGrid(columns: [GridItem(.flexible(maximum:110)),GridItem(.flexible(maximum:110)),GridItem(.flexible(maximum:110))],spacing: 10){
+                LazyVGrid(columns: [GridItem(.flexible(maximum:300))],spacing: 10){
                     
                     ForEach(cards){
                         card in categoryCard(card)
@@ -141,7 +143,7 @@ struct CardCollectionView: View {
                     
                 }
             }
-            .padding(.top,100)
+            .padding(.top,10)
             
             CommonViewElements.actionBarAtBottom(actionPlus: {
                 addCardOn = true
