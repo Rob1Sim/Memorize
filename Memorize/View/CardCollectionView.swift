@@ -209,7 +209,11 @@ struct CardCollectionView: View {
                     .environment(\.managedObjectContext, managedObjectContext)
             }.sheet(isPresented: $editCardOn){
                 //Ouvre le formulaire de modification
-                FormModifyCard(shouldQuit: $editCardOn, cardEntity:$whichCard, cardToShow: $cards)
+                let q = [whichCard.question ?? "",whichCard.questionSup ?? "",whichCard.response ?? "",whichCard.responseSup ?? ""]
+                
+                
+                FormModifyCard(question: q[0], supQuestion: q[1], response: q[2], supResponse:q[3],
+                    shouldQuit: $editCardOn, cardEntity:$whichCard, cardToShow: $cards)
                     .environment(\.managedObjectContext, managedObjectContext)
             }
             Spacer()
