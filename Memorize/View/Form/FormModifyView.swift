@@ -15,7 +15,7 @@ struct FormModifyView: View {
     @Environment(\.managedObjectContext) var managedObjectContext
     
     ///Valeur du champ d'entré
-    @State var textInput = ""
+    @State public var textInput = ""
     ///Variable qui dit si la vue doit être afficher ou pas
     @Binding var shouldQuit:Bool
     ///Référence à la collections qui va être modifié

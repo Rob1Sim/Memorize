@@ -13,13 +13,14 @@ struct FormModifyCard: View {
     @Environment(\.managedObjectContext) var managedObjectContext
     
     ///Champs de la question
-    @State var question = ""
+    @State public var question:String = ""
+    
     ///Champs du supplément de la question
-    @State var supQuestion = ""
+    @State public var supQuestion:String = ""
     ///Champs de la réponse
-    @State var response = ""
+    @State public var response:String = ""
     ///Champs du suplément de la réponse
-    @State var supResponse = ""
+    @State public var supResponse:String = ""
     
     ///Variable qui dit si la vue doit être afficher ou pas
     @Binding var shouldQuit:Bool
@@ -34,20 +35,23 @@ struct FormModifyCard: View {
      */
     func modify()->Void{
         
-        if question != "" && response != ""{
-            DispatchQueue.global(qos: .userInteractive).async {
+        
+        DispatchQueue.global(qos: .userInteractive).async {
+            if question != "" && response != ""{
                 cardEntity.question = question
                 cardEntity.questionSup = supQuestion
                 cardEntity.response = response
                 cardEntity.responseSup = supResponse
                 
+                print($question)
                 
                 //Permet de sauvegarder juste après un ajout
                 if managedObjectContext.hasChanges {
                     PersistenceController.shared.save()
                 }
+                shouldQuit.toggle() 
             }
-            shouldQuit.toggle()
+            
         }
         
     }
@@ -91,8 +95,8 @@ struct FormModifyCard: View {
 
 /*
  struct FormAddCard_Previews: PreviewProvider {
-     static var previews: some View {
-         FormAddCard(shouldQuit: .constant(true),collectionParent: .constant(CollectionEntity()))
-     }
+ static var previews: some View {
+ FormAddCard(shouldQuit: .constant(true),collectionParent: .constant(CollectionEntity()))
+ }
  }
  */
